@@ -13,6 +13,7 @@ class S3TriggerStack(core.Stack):
 
         # create lambda function
         function = _lambda.Function(self, "lambda_function",
+                                    function_name="<Optional to define your function name>",
                                     runtime=_lambda.Runtime.PYTHON_3_7,
                                     handler="lambda-handler.main",
                                     code=_lambda.Code.asset("./lambda"))
